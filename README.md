@@ -1,4 +1,4 @@
-<p align="center"><img width="70%" src="https://hacktoberfest.digitalocean.com/_nuxt/img/logo-hacktoberfest-full.f42e3b1.svg"/></p>
+<p align="center"><img width="90%" src="/banner.jpg"/></p>
 
 # :star: Docker Cheatsheet  :star:
 
@@ -191,3 +191,23 @@ NOTE: *Replace ```<command>``` with the command you want to execute on the conta
 **[⬆ Back to Index](#index-books)**
 
 <br>
+
+## Contributors
+
+<table>
+	<tr align="center" style="font-weight:bold">
+		<td>
+      <p>
+		Gowtham Karthikeyan
+        </p>
+		<p align="center">
+			<img src = "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgXVvViVaEUfbiTgGxPyB15LN_y3SwJBMBfUmwnNHe1Q9K76y7d2VRJzxXwNyILNqlUFL07Op3hY1kr0n1-5_cFEC5RAlZ2m2eW1l9FXJZ-r7MCIm_jUjIGOr4z1Kb6Sjd_3b7fMVJhmsw3COGi_eZm_029F4ig09e4_B1adWH2c2zkln6VouAr0K6Z/s1600/GK.jpeg" width="150" height="150" alt="Gowtham Karthikeyan">
+		</p>
+			<p align="center">
+				<a href = "https://github.com/inboxsgk">
+					<img src = "http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height = "36" alt="GitHub"/>
+				</a>
+			</p>
+		</td>
+	</tr>
+</table>
