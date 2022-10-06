@@ -1,68 +1,193 @@
 <p align="center"><img width="70%" src="https://hacktoberfest.digitalocean.com/_nuxt/img/logo-hacktoberfest-full.f42e3b1.svg"/></p>
 
-<h1>
- ⭐️ Project Name Goes here ⭐️
-</h1>
-Project description goes here.
-<br> 
+# :star: Docker Cheatsheet  :star:
+
+This Repository is a guide to all the Docker CLI commands you need to use in case any of these situations arise
+
+## Index :books:
+* [Create Container :sparkles:](#create-containers-sparkles)
+* [Start Container :running:](#start-container-running)
+* [Stop Running :red_circle:](#stop-running-container-red_circle)
+* [Container Management :briefcase:](#container-management-briefcase)
+* [Logs :page_with_curl:](#logs-page_with_curl)
+* [DOCKERFILE :whale:](#dockerfile-whale)
 
 <br>
 
----
-[![DOCS](https://img.shields.io/badge/Documentation-see%20docs-green?style=flat-square&logo=appveyor)](INSERT_LINK_FOR_DOCS_HERE) 
-  [![UI ](https://img.shields.io/badge/User%20Interface-Link%20to%20UI-orange?style=flat-square&logo=appveyor)](INSERT_UI_LINK_HERE)
+## Create Containers :sparkles:
 
-
-## Features
-- Insert list of features here
-
-
-## Instructions to run
+- ### Create container from image and start it
+```sh
+> docker container run <image name>
 ```
-$ git clone https://github.com/CodeChefVIT/<Project>
-$ cd <Project>
-$ pip3 install -r requirements.txt
-$ python3 manage.py runserver
+NOTE: *Replace ```<image name>``` with required image name ignoring <>*
+
+<br>
+
+- ### Create container from image but not run it
+```sh
+> docker container create <image name>
+```
+NOTE: *Replace ```<image name>``` with required image name ignoring <>*
+
+<br>
+
+**[⬆ Back to Index](#index-books)**
+
+<br>
+
+## Start Container :running:
+
+- ### Start container which is currently not running
+```sh
+> docker container start <container id>
+```
+NOTE: *Replace ```<container id>``` with target container id ignoring <>*
+
+<br>
+
+- ### Start container which is currently not running and show output
+```sh
+> docker container start -a <container id>
+```
+NOTE: *Replace ```<container id>``` with target container id ignoring <>*
+
+<br>
+
+- ### Start container with shell access (*ssh style*)
+```sh
+> docker container run -it <container_id> sh
+```
+NOTE: *Replace ```<container_id>``` with target container id ignoring <>*
+
+<br>
+
+- ### Start container with port mapping
+```sh
+> docker container run -p <to_port:from_port> <image_name>
+```
+NOTE: *Replace ```<image_name>``` with target image name and replace ```to_port``` with the port you want to access from your machine and replace ```from_port``` with the port in which the container uses*
+*Ignore ```<>```*
+
+<br>
+
+**[⬆ Back to Index](#index-books)**
+
+<br>
+
+## Stop Running Container :red_circle:
+
+- ### Stop container after executing
+```sh
+> docker container stop <container id>
+```
+NOTE: *Replace ```<container id>``` with target container id ignoring <>*
+
+<br>
+
+- ### Intstantly terminate running container (force stop)
+```sh
+> docker container kill <container id>
+```
+NOTE: *Replace ```<container id>``` with target container id ignoring <>*
+
+<br>
+
+**[⬆ Back to Index](#index-books)**
+
+<br>
+
+## Container Management :briefcase:
+
+- ### View list of all running containers
+```sh
+> docker container ls
+```
+NOTE: *Add parameter ```-a``` to list all containers ever created*
+
+<br>
+
+- ### Remove all stopped containers from list
+```sh
+> docker system prune
 ```
 
-## Contributors
-- <a href="https://github.com/<Contributor>">Contributor Name</a>
-- <a href="https://github.com/<Contributor>">Contributor Name</a>
+<br>
 
+- ### Clear list
+```sh
+> docker system prune --all
+```
 
-<h2>
- What is Hacktoberfest?
-</h2>
-Hacktoberfest is the easiest way to get into open source! Hacktoberfest is a month long celebration of open source code presented by Digital Ocean.
+<br>
 
-During the entire month of October 2020, all you have to do is contribute to any open source project with the hacktoberfest tag and open at least 4 pull requests which follow the [Hacktoberfest guidelines](https://hacktoberfest.digitalocean.com/faq). It can be any project mentioned below and you can contribute in any way possible. It can be a be a bug fix, optimisation, feature addition or even a documentation enhancement! 
+- ### Remove specific container from list
+```sh
+> docker container rm <continer_id>
+```
+NOTE: *Replace ```<container_id>``` with target container id ignoring <>*
+*This might fail if the container is currently running. In that case view force delete command below*
 
-If you’ve never contributed to open source before, this is the perfect time to get started because Hacktoberfest provides a large list of available contribution opportunities.
+<br>
 
-<h1>
-How to get Started?
-</h1>
+- ### Force delete container from list
+```sh
+> docker container rm -f <container_id>
+```
+NOTE: *Replace ```<container_id>``` with target container id ignoring <>*
 
-Click on the link to register yourself [here](https://hacktoberfest.digitalocean.com/).
+<br>
 
-## Why should you take part?
-- Chance to contribute to awesome open source projects 
-- Engage with reputed communities
-- Free swags and T-Shirts from Digital Ocean
-- Chance to get a tree planted and make Earth greener
+**[⬆ Back to Index](#index-books)**
 
-## CONTRIBUTING
+<br>
 
-Please refer [CONTRIBUTIONS.md](./CONTRIBUTIONS.md) to check our policies and practices.
+## Logs :page_with_curl:
 
-We welcome first time contributors and open source enthusiasts. Check out our issues and if you are willing to start with something simple check issues marked with the good-first-issue tag.
+- ### View specific container logs
+```sh
+> docker container logs <container id>
+```
+NOTE: *Replace ```<container id>``` with target container id ignoring <>*
 
-## License
-[![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
+<br>
 
-If you liked this project, please leave a 🌟
+**[⬆ Back to Index](#index-books)**
 
-<p align="center">
-	With :heart: by <a href="https://www.codechefvit.com" target="_blank">CodeChef-VIT</a>
-</p>
+<br>
 
+## Dockerfile :whale:
+
+- ### Set base image
+```sh
+FROM <image>
+```
+
+NOTE: *Replace ```<image>``` with base image*
+
+<br>
+
+- ### Set Author Name
+```sh
+MAINTAINER <name>
+```
+
+NOTE: *Replace ```<name>``` with the name you want to set for the author field*
+
+<br>
+
+- ### Execute shell command
+
+```sh
+RUN <command>
+```
+
+NOTE: *Replace ```<command>``` with the command you want to execute on the containers shell*
+
+<br>
+
+[Click here](https://github.com/CodeChefVIT/Docker-deployment-templates) to visit the repository containing language and framework specific templates for docker and docker compose
+
+**[⬆ Back to Index](#index-books)**
+
+<br>
